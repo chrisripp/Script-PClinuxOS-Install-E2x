@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+#  OUR DEFAULT E23 STARTUP SCRIPT
+#
+
+if [ ! -d "/tmp/runtime-$USER" ]; then
+mkdir -p /tmp/runtime-$USER -m 700
+chown $USER /tmp/runtime-$USER
+fi
+
+export XDG_RUNTIME_DIR=/tmp/runtime-$USER
+
+sleep 1
+
+# export ECORE_NO_VSYNC=1 
+/usr/local/bin/enlightenment_start
+# cleanup
+rm -f $HOME/Desktop/*storage*.desktop
+rm -f $HOME/Desktop/root.desktop
+rm -f $HOME/Desktop/tmp.desktop
+rm -f $HOME/Desktop/home.desktop
+# cleanup root
+rm -f /root/Desktop/*storage*.desktop
+rm -f /root/Desktop/root.desktop
+rm -f /root/Desktop/tmp.desktop
+rm -f /root/Desktop/home.desktop
