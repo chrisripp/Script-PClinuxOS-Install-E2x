@@ -10,4 +10,4 @@ A Sources-E folder will be created at your /Home,
 all git sources will be cloned and compiled into it
 
 e will be installed in usr/local
-For the moment the menu E is not created in GDM, I work there
+For the moment the menu E is not created on GDM, I work there
