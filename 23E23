@@ -1,5 +1,0 @@
-NAME=E23
-ICON=
-EXEC=/usr/bin/goe
-SCRIPT:
-exec /usr/bin/goe
