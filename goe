@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#  OUR DEFAULT E23 STARTUP SCRIPT
+#  OUR DEFAULT E19 STARTUP SCRIPT
 #
 
 if [ ! -d "/tmp/runtime-$USER" ]; then
