@@ -1,8 +1,5 @@
 # Author: Chrisripp / Triki1
-## Note the LD_LIBRARY_PATH environment variable is set. 
-## You can ensure the system always supports /usr/local/lib64 by editing /etc/ld.so.conf 
-## or adding a file to /etc/ld.so.conf.d and simply have a line in either file that says:
-## /usr/local/lib64
+# Script for PCLINUXOS
 ## Install all necessary libraries:
 
 
@@ -32,9 +29,9 @@ lib64unibreak-devel lib64unwind-devel lib64xcb-util-keysyms-devel lib64xkbcommon
 python3-setuptools python3-wheel valgrind wmctrl x11-server-xephyr python3-pip libpthread-stubs"
 
 ## PATH / Flag for duilding:
-export PATH=/usr/local/bin:"$PATH"
-export PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig:"$PKG_CONFIG_PATH"
-export LD_LIBRARY_PATH=/usr/local/lib64:"$LD_LIBRARY_PATH"
+export PATH=/usr/bin:"$PATH"
+export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:"$PKG_CONFIG_PATH"
+export LD_LIBRARY_PATH=/usr/lib64:"$LD_LIBRARY_PATH"
 export CFLAGS="-O3 -ffast-math -march=native"
 
 ## Folder Sources-E
@@ -48,7 +45,7 @@ git clone https://git.enlightenment.org/apps/terminology.git
 ## YOU NEED Pulseaudio SHIT or not
 ## -Dpulseaudio=false -Davahi=false
 cd efl
-meson --prefix=/usr/local -Dsystemd=false . build
+meson --prefix=/usr -Dsystemd=false . build
 ninja -C build
 su -c "ninja -C build install"
 su -c "ldconfig" 
@@ -57,7 +54,7 @@ cd ..
 ## You need to disable PAM here? Dunno. -Dpam=false in case?
 ## -Dpulseaudio=false -Davahi=false
 cd enlightenment
-meson --prefix=/usr/local -Dsystemd=false . build
+meson --prefix=/usr -Dsystemd=false . build
 ninja -C build
 su -c "ninja -C build install"
 su -c "ldconfig" 
