@@ -1,39 +1,55 @@
 # Author: Chrisripp / Triki1
 
 ## Folder APPS
-mkdir Sources-E/APPS
+cd Sources-E
+mkdir APPS
 cd APPS
 ## CLONE GIT
 #GEANY
- git clone https://git.enlightenment.org/editors/geany-configs.git
-# EXTRAMENU
- git clone https://git.enlightenment.org/enlightenment/modules/extramenu.git
- # ENVENTOR
- git clone https://git.enlightenment.org/tools/enventor.git
- # RAGE
- git clone https://git.enlightenment.org/apps/rage.git
- #EVISIUM
- git clone https://git.enlightenment.org/apps/evisum.git
- # PENGUINS
- git clone https://git.enlightenment.org/enlightenment/modules/penguins.git
- # DESKANITY
- git clone https://git.enlightenment.org/enlightenment/modules/desksanity.git
- #SNOW
- git clone https://git.enlightenment.org/devs/ajwillia-ms/snow.git
- #FLAME
- git clone https://git.enlightenment.org/devs/ajwillia-ms/flame.git
- # WALLPAPER2
- #git clone https://git.enlightenment.org/enlightenment/modules/wallpaper2.git
- # EPHOTO
- git clone https://git.enlightenment.org/apps/ephoto.git
- Illume2
- git clone https://git.enlightenment.org/devs/zmike/e_module-illume2.git
- ## Compil extramenu
+# git clone https://git.enlightenment.org/editors/geany-configs.git
+ # EXTRAMENU
+ git clone http://git.enlightenment.org/enlightenment/enlightenment-module-extramenu.git
+ 
+# ENVENTOR
+ git clone http://git.enlightenment.org/enlightenment/enventor.git
+ 
+# RAGE
+ git clone http://git.enlightenment.org/enlightenment/rage.git
+ 
+#EPHOTO
+ git clone http://git.enlightenment.org/enlightenment/ephoto.git
+ 
+#EVISUM
+ git clone http://git.enlightenment.org/enlightenment/evisum.git
+ 
+# PENGUINS
+ git clone http://git.enlightenment.org/enlightenment/enlightenment-module-penguins.git
+ 
+# DESKANITY
+ git clone http://git.enlightenment.org/enlightenment/enlightenment-module-desksanity.git
+ 
+#ERULER
+ git clone http://git.enlightenment.org/enlightenment/eruler.git
+ 
+#EDGAR
+ git clone http://git.enlightenment.org/enlightenment/enlightenment-module-edgar.git
+ 
+#PLACES 
+ git clone http://git.enlightenment.org/enlightenment/enlightenment-module-places.git
+ 
+#PYTHON-EFL
+ git clone http://git.enlightenment.org/enlightenment/python-efl.git
+  
+# WALLPAPER2
+ git clone http://git.enlightenment.org/enlightenment/enlightenment-module-wallpaper2.git
+ 
+## Compil extramenu
  export PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig
- cd extramenu
- ./autogen.sh
- make
- su -c "make install"
+ cd enlightenment-module-extramenu
+ meson  . build
+ ninja -C build
+ su -c "ninja -C build install"
+ su -c "ldconfig" 
  cd ..
 # ENVENTOR
 cd enventor
@@ -42,51 +58,72 @@ cd enventor
  su -c "make install"
  su -c "ldconfig" 
 cd ..
+#RAGE
+cd rage
+meson  . build
+ninja -C build
+su -c "ninja -C build install"
+su -c "ldconfig" 
+cd ..
 #EPHOTO
 cd ephoto
 meson  . build
 ninja -C build
 su -c "ninja -C build install"
 su -c "ldconfig" 
-cd..
-#EVISIUM
-cd evisium
+cd ..
+#EVISUM
+cd evisum
 meson  . build
 ninja -C build
 su -c "ninja -C build install"
 su -c "ldconfig" 
 cd ..
 #PENGUINS
-cd enventor
-./autogen.sh
- make
- su -c "make install"
- su -c "ldconfig" 
+cd enlightenment-module-penguins
+meson  . build
+ninja -C build
+su -c "ninja -C build install"
+su -c "ldconfig" 
 cd ..
 #DESKANITY
-cd deskanity
+cd enlightenment-module-desksanity
 meson  . build
 ninja -C build
 su -c "ninja -C build install"
 cd ..
-#SNOW 
-cd snow
-./autogen.sh
- make
- su -c "make install"
+#ERULER
+cd eruler
+meson  . build
+ninja -C build
+su -c "ninja -C build install"
+su -c "ldconfig" 
+ cd ..
+#EDGAR
+cd enlightenment-module-edgar
+meson  . build
+ninja -C build
+su -c "ninja -C build install"
+su -c "ldconfig" 
 cd ..
-#FLAME
-cd flame
-./autogen.sh
- make
- su -c "make install"
+#PLACES
+cd enlightenment-module-places
+meson  . build
+ninja -C build
+su -c "ninja -C build install"
+su -c "ldconfig" 
 cd ..
 #WALLPAPER2
-cd enventor
-./autogen.sh
- make
- su -c "make install"
- cd ..
+cd enlightenment-module-wallpaper2
+meson  . build
+ninja -C build
+su -c "ninja -C build install"
+su -c "ldconfig" 
+cd ..
+#PYTHON-EFL
+cd python-efl
+pip install python-efl
+cd ..
 
  
 

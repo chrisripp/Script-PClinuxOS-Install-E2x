@@ -38,9 +38,9 @@ export CFLAGS="-O3 -ffast-math -march=native"
 mkdir Sources-E
 cd Sources-E
 ## CLONE GIT
-git clone https://git.enlightenment.org/core/efl.git
-git clone http://git.enlightenment.org/core/enlightenment.git
-git clone https://git.enlightenment.org/apps/terminology.git
+git clone http://git.enlightenment.org/enlightenment/efl.git
+git clone http://git.enlightenment.org/enlightenment/enlightenment.git
+git clone http://git.enlightenment.org/enlightenment/terminology.git
 ## Compil EFL
 ## YOU NEED Pulseaudio SHIT or not
 ## -Dpulseaudio=false -Davahi=false
